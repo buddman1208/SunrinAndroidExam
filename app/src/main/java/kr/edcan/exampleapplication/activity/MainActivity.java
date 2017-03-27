@@ -1,10 +1,14 @@
 package kr.edcan.exampleapplication.activity;
 
 import android.content.SharedPreferences;
+import android.graphics.drawable.BitmapDrawable;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,52 +34,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setDefault();
-        setNetwork();
-        setDB();
-    }
-
-    private void setDefault() {
-        button = (Button) findViewById(R.id.button);
-        textView = (TextView) findViewById(R.id.textView);
-        button.setOnClickListener(new View.OnClickListener() {
+        ((RadioGroup) findViewById(R.id.group)).setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                NetworkHelper.getNetworkInstance().getRequest().enqueue(new Callback<ResponseBody>() {
-                    @Override
-                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        switch (response.code()) {
-                            case 200:
-                                try {
-                                    Toast.makeText(MainActivity.this, response.body().string() + "", Toast.LENGTH_SHORT).show();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<ResponseBody> call, Throwable t) {
-
-                    }
-                });
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                Toast.makeText(MainActivity.this, ((checkedId == R.id.button01) ? "남성" : "여성") + "이 선택되었습니다", Toast.LENGTH_SHORT).show();
             }
         });
+        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.mipmap.ic_launcher);
+        int width = drawable.getIntrinsicWidth();
+        int height = drawable.getIntrinsicHeight();
+        Toast.makeText(this, width + " " +height+"", Toast.LENGTH_LONG).show();
     }
 
-    private void setDB() {
-        SharedPreferences sharedPreferences = getSharedPreferences("KOHA", 0);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        // Write
-        editor.putBoolean("AM_I_STUDYING", false);
-        editor.apply();
-    }
-
-    private void setNetwork() {
-        new OkHttpClient.Builder()
-                .addNetworkInterceptor(new StethoInterceptor())
-                .build();
-
-    }
 }

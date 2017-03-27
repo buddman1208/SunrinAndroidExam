@@ -3,8 +3,12 @@ package kr.edcan.exampleapplication.utils;
 import android.content.Context;
 import android.net.ConnectivityManager;
 
+import com.facebook.stetho.okhttp3.StethoInterceptor;
+
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
 /**
  * Created by Sunrin on 2017-03-06.
  */
@@ -25,6 +29,9 @@ public class NetworkHelper {
             retrofit = new Retrofit.Builder()
                     .baseUrl(url + ":" + port)
                     .addConverterFactory(GsonConverterFactory.create())
+                    .client(new OkHttpClient.Builder()
+                            .addNetworkInterceptor(new StethoInterceptor())
+                            .build())
                     .build();
         }
         return retrofit.create(APIRequest.class);

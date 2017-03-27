@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="stetho-js-rhino-1.4.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.facebook.stetho/stetho-js-rhino/1.4.1/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.facebook.stetho/stetho-js-rhino/1.4.1/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/6bee13f6d8666766cd530f6b391f8bd557d0e7cb/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/6bee13f6d8666766cd530f6b391f8bd557d0e7cb/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

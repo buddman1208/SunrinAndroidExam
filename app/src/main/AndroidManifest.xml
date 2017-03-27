@@ -3,6 +3,7 @@
     package="kr.edcan.exampleapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".AppController"
         android:allowBackup="true"
@@ -11,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
+
+        </activity>
+        <activity android:name=".activity.EditTextActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

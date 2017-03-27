@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="stetho-okhttp-1.4.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.facebook.stetho/stetho-okhttp/1.4.1/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.facebook.stetho/stetho-okhttp/1.4.1/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/1242d8e199f86bedd1c7639e57bae456e17a620d/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/1242d8e199f86bedd1c7639e57bae456e17a620d/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
