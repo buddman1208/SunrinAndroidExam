@@ -6,13 +6,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:padding="@dimen/activity_horizontal_margin"
         tools:context="kr.edcan.exampleapplication.activity.MenuActivity">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/controlGuest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="control guest" />
+
+        <Button
+            android:id="@+id/controlMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="control money" />
+
+        <Button
+            android:id="@+id/controlItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="control product" />
 
         <Button
             android:id="@+id/button"

@@ -12,7 +12,7 @@ import kr.edcan.exampleapplication.R;
 public class StartActivityResultActivity extends AppCompatActivity {
 
     static final int REQUEST_CODE = 6974;
-
+    String[] arr = new String[]{"고객관리", "매출관리", "상품관리"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class StartActivityResultActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE) {
             switch (resultCode) {
                 case RESULT_OK:
-                    ((TextView) findViewById(R.id.resultText)).setText(data.getStringExtra("name") + " 이 수신되었습니다.");
+                    ((TextView) findViewById(R.id.resultText)).setText(arr[data.getIntExtra("type", 0)] + "메뉴를 시작합니다.");
                     break;
                 default:
                     Toast.makeText(this, "User에 의해 취소되었습니다", Toast.LENGTH_SHORT).show();
