@@ -15,19 +15,23 @@
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.EditTextActivity" />
         <activity android:name=".activity.InflateActivity" />
-        <activity android:name=".activity.StartActivityResultActivity">
-
-        </activity>
+        <activity android:name=".activity.StartActivityResultActivity" />
         <activity android:name=".activity.MenuActivity" />
         <activity android:name=".activity.CallActivity" />
         <activity android:name=".activity.ParcelableExamMenuActivity">
+
+        </activity>
+        <activity android:name=".activity.ParcelableExamResultActivity" />
+        <activity android:name=".activity.ActivityFlowTestActivity" />
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ParcelableExamResultActivity"></activity>
+        <activity android:name=".activity.AfterLoginActivity" />
+        <activity android:name=".activity.ClassSelectActivity"></activity>
     </application>
 
 </manifest>
